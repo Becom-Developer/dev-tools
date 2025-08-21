@@ -1,0 +1,10 @@
+services:
+  web:
+    container_name: ctr-dev-tools
+    build:
+      context: .
+    image: img-dev-tools
+    ports:
+      - '8100:80'
+    volumes:
+      - .:/usr/src/app
