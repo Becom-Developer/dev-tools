@@ -16,7 +16,7 @@ RUN a2enconf fqdn
 RUN apt update
 RUN apt install -y git unzip
 
-# フロント周りのライブラリ
+# フロント周りのライブラリ(lts の最新版にあわせる)
 RUN apt install -y nodejs
 RUN apt install -y npm
 RUN npm install -g n
