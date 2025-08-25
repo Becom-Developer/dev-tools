@@ -191,6 +191,23 @@ php artisan migrate
 
 webブラウザで確認: <https://becom2022.sakura.ne.jp/dev-tools/public/>
 
+ドメイン周りの設定
+
+独自ドメインの調整をしたあと、初期ドメインでアクセスを制限しておく
+
+```bash
+touch ~/www/.htaccess
+vim ~/www/.htaccess
+```
+
+下記の様に
+
+```text
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^.*\.sakura\.ne\.jp
+RewriteRule ^.*$ - [R=404,L]
+```
+
 ## References
 
 - 公式: <https://laravel.com/>
@@ -198,3 +215,4 @@ webブラウザで確認: <https://becom2022.sakura.ne.jp/dev-tools/public/>
 - dockerhub: <https://hub.docker.com>
 - nodenv: <https://github.com/nodenv/nodenv>
 - node.js: <https://nodejs.org/ja/>
+- レンタルサーバー記事: <https://knowledge.sakura.ad.jp/41775/>
