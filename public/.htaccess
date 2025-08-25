@@ -22,9 +22,4 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
-
-    # 公開環境での対策
-    RewriteEngine on
-    RewriteCond %{HTTP_HOST} ^.*\.sakura\.ne\.jp
-    RewriteRule ^.*$ - [R=404,L]
 </IfModule>
