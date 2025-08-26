@@ -2,6 +2,48 @@
 
 趣味で作った小粒なシステムたち
 
+## Build Setup
+
+初動時の設定について
+
+- 事前に docker を導入して使えるようにしておく
+  - 参考: <https://docs.docker.com/get-docker/>
+
+git clone 後に環境変数の準備
+
+`.env` ファイルはあらかじめ用意したサンプルを活用
+
+```bash
+git clone git@github.com:Becom-Developer/dev-tools.git
+cd dev-tools
+cp .env.example .env
+```
+
+docker を使いコンテナを起動
+
+```bash
+docker compose up --build
+```
+
+もうひとつコンソール画面を立ち上げ、コンテナの中でモジュールインストール一式
+
+```bash
+docker compose exec web composer update
+docker compose exec web php artisan key:generate
+docker compose exec web npm install
+docker compose exec web npm run build
+```
+
+マイグレーション
+
+```bash
+docker compose exec web php artisan migrate
+```
+
+web ブラウザで下記のURLをアクセスして正常に表示されていることを確認
+
+- <http://localhost:8100>
+
 ## Environment
 
 環境構築の記録
@@ -33,6 +75,9 @@ WORKDIR /usr/src/app
 ENV APACHE_DOCUMENT_ROOT=/usr/src/app/public
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+
+# ルーティングを追加した時うまくいかないことがあるため rewrite を有効化
+RUN a2enmod rewrite
 
 # Set the 'ServerName' directive globally to suppress this message 対策
 RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf
@@ -107,7 +152,10 @@ laravel コマンドを実行したい時は下記の様に
 
 インストール時に出現する選択は全て標準で選択されてるものですすめ
 
-初期設定のデータベース sqlite で構築しておく
+- `Which starter kit would you like to install? - None`
+- `Which testing framework do you prefer? - Pest`
+- `Which database will your application use? - SQLite`
+- `Would you like to run npm install and npm run build? - Yes`
 
 インストール終了後、ディレクトリ構成を整える
 

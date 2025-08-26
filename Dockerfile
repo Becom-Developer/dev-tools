@@ -8,6 +8,9 @@ ENV APACHE_DOCUMENT_ROOT=/usr/src/app/public
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 
+# ルーティングを追加した時うまくいかないことがあるため rewrite を有効化
+RUN a2enmod rewrite
+
 # Set the 'ServerName' directive globally to suppress this message 対策
 RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf
 RUN a2enconf fqdn
