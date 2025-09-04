@@ -1,0 +1,109 @@
+@charset "UTF-8";
+/*!
+ * dev-tools original css
+ * Copyright 2025 becom
+ */
+
+/* ブレイクポイント */
+/*
+Extra small None <576px
+Small sm ≥576px
+Medium md ≥768px
+Large lg ≥992px
+Extra large xl ≥1200px
+Extra extra large xxl ≥1400px
+ */
+
+/* < 576 xs */
+.container {
+    border: 1px solid silver;
+    width: 100%;
+    margin: 0 auto;
+}
+.xs { display: none; }
+.sm { display: none; }
+.md { display: none; }
+.lg { display: none; }
+.xl { display: none; }
+.xxl { display: none; }
+.sm-less { display: block; }
+.sm-over { display: none; }
+.md-less { display: block; }
+.md-over { display: none; }
+.lg-less { display: block; }
+.lg-over { display: none; }
+.xl-less { display: block; }
+.xl-over { display: none; }
+.xxl-less { display: block; }
+.xxl-over { display: none; }
+/* xs */
+@media (0px <= width < 576px) {
+    .xs { display: block; }
+}
+/* 576 -> 768 sm */
+@media (576px <= width < 768px) {
+    .sm { display: block; }
+    .container { width: 540px; }
+}
+/* 576 -> */
+@media screen and (min-width: 576px) {
+    .sm-less { display: none; }
+    .sm-over { display: block; }
+}
+/* 768 -> 992 md */
+@media (768px <= width < 992px) {
+    .md { display: block; }
+    .container { width: 720px; }
+}
+/* 768 -> */
+@media screen and (min-width: 768px) {
+    .md-less { display: none; }
+    .md-over { display: block; }
+}
+/* 992 -> 1200 lg */
+@media (992px <= width < 1200px) {
+    .lg { display: block; }
+    .container { width: 960px; }
+}
+/* 992 -> */
+@media screen and (min-width: 992px) {
+    .lg-less { display: none; }
+    .lg-over { display: block; }
+}
+/* 1200 -> 1400 xl */
+@media (1200px <= width < 1400px) {
+    .xl { display: block; }
+    .container { width: 1140px; }
+}
+/* 1200 -> */
+@media screen and (min-width: 1200px) {
+    .xl-less { display: none; }
+    .xl-over { display: block; }
+}
+/* 1400 -> max  xxl */
+@media (min-width: 1400px) {
+    .xxl { display: block; }
+    .container { width: 1320px; }
+    .xxl-less { display: none; }
+    .xxl-over { display: block; }
+}
+
+/* 紙 paper  */
+.paper {
+    border: 1px solid silver;
+    background: whitesmoke;
+}
+.paper-red {
+    border: 1px solid tomato;
+    background: coral;
+}
+.paper-blue {
+    border: 1px solid deepskyblue;
+    background: lightskyblue;
+}
+
+/* 鉛筆 pencil */
+.pencil {
+    font-size: 3rem;
+    color: black;
+}
