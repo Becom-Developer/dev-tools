@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<x-head.basic />
-
-<body class="container">
-  <div class="paper-red">test</div>
-  <div class="paper-red pencil">dev-tools original css * Copyright 2025 becom</div>
-  <div class="container">container test</div>
-  <div class="xs">xs</div>
-</body>
-
-</html>
+<x-layout>
+  <h1>dev-tools</h1>
+  <h2>
+    <a href="https://psb.becom.co.jp/" target="_blank" rel="noopener noreferrer">人名検索</a>
+  </h2>
+  <p>
+    <a href="https://psb.becom.co.jp/" target="_blank" rel="noopener noreferrer">https://psb.becom.co.jp/</a>
+  </p>
+  <hr>
+  <h2>
+    <a href="https://zsearch-web.becom.co.jp/" target="_blank" rel="noopener noreferrer">住所検索</a>
+  </h2>
+  <p>
+    <a href="https://zsearch-web.becom.co.jp/" target="_blank" rel="noopener noreferrer">https://zsearch-web.becom.co.jp/</a>
+  </p>
+  <hr>
+  <h2><a href="https://drill.becom.co.jp/" target="_blank" rel="noopener noreferrer">計算ドリル</a></h2>
+  <p>
+    <a href="https://drill.becom.co.jp/" target="_blank" rel="noopener noreferrer">https://drill.becom.co.jp/</a>
+  </p>
+</x-layout>
