@@ -18,4 +18,8 @@
   <p>
     <a href="https://drill.becom.co.jp/" target="_blank" rel="noopener noreferrer">https://drill.becom.co.jp/</a>
   </p>
+  <h2><a href="/credit-csv" target="_blank" rel="noopener noreferrer">credit-csv</a></h2>
+  <p>
+    <a href="/credit-csv" target="_blank" rel="noopener noreferrer">credit-csv</a>
+  </p>
 </x-layout>
