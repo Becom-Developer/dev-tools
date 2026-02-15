@@ -40,6 +40,12 @@ docker compose exec web npm run build
 docker compose exec web php artisan migrate
 ```
 
+python スクリプトを実行するための準備
+
+```bash
+docker compose exec web php artisan app:start-pylogic
+```
+
 web ブラウザで下記のURLをアクセスして正常に表示されていることを確認
 
 - <http://localhost:8100>

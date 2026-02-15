@@ -25,6 +25,9 @@ RUN apt install -y npm
 RUN npm install -g n
 RUN n lts
 
+# python 周りの環境
+RUN apt install -y python3-venv
+
 # ユーザーを作成後切り替え
 RUN useradd -s /bin/bash -m -u 1000 appuser
 USER 1000
